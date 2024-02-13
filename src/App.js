@@ -12,7 +12,6 @@ function App() {
   const [selectedTabIndex, setSelectedTabIndex] = useState("getUltraSrtNcst");
 
   const renderComponent = useCallback(() => {
-    console.log("jjy selectedTabIndex", selectedTabIndex);
     switch (selectedTabIndex) {
       case "getUltraSrtNcst":
         return <UltraSrcNcst />;
