@@ -7,9 +7,7 @@ function App() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <div className="App">
-        <UltraSrcNcst />
-      </div>
+      <UltraSrcNcst />
     </QueryClientProvider>
   );
 }
