@@ -1,12 +1,12 @@
 import React from "react";
 import { useQuery } from "@tanstack/react-query";
-import { getUltraSrtNcst } from "../api/api";
+import { getVilageFcst } from "../api/api";
 import { category, getCategoryValue } from "../utils/constants";
 
-const UltraSrcNcst = () => {
+const VilageFcst = () => {
   const { data, isPending, error } = useQuery({
-    queryKey: ["ultraSrcNcst"],
-    queryFn: getUltraSrtNcst,
+    queryKey: ["VilageFcst"],
+    queryFn: getVilageFcst,
   });
 
   if (isPending) return "Loading...";
@@ -19,7 +19,7 @@ const UltraSrcNcst = () => {
           {data.map((item, index) => (
             <div key={index}>
               - {category[item.category].title}:{" "}
-              {getCategoryValue(item.category, item.obsrValue)}
+              {getCategoryValue(item.category, item.fcstValue)}
             </div>
           ))}
         </>
@@ -30,4 +30,4 @@ const UltraSrcNcst = () => {
   );
 };
 
-export default UltraSrcNcst;
+export default VilageFcst;
