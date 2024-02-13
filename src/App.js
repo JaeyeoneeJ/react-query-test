@@ -1,10 +1,16 @@
 import React from "react";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import UltraSrcNcst from "./components/UltraSrcNcst";
 
 function App() {
+  const queryClient = new QueryClient();
+
   return (
-    <div className="App">
-      <h3>React Query Test</h3>
-    </div>
+    <QueryClientProvider client={queryClient}>
+      <div className="App">
+        <UltraSrcNcst />
+      </div>
+    </QueryClientProvider>
   );
 }
 
