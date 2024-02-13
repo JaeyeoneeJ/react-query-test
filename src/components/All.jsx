@@ -17,8 +17,11 @@ const All = () => {
     },
   });
 
-  console.log("jjy results", results);
-  return <div>All</div>;
+  if (results.pending) {
+    return <div>Not yet...</div>;
+  } else {
+    return <div>All Data</div>;
+  }
 };
 
 export default All;
